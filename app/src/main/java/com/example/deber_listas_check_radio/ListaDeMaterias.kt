@@ -1,6 +1,8 @@
 package com.example.deber_listas_check_radio
 
+import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.ListView
@@ -10,6 +12,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import kotlin.math.log
 
 class ListaDeMaterias : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -40,7 +43,12 @@ class ListaDeMaterias : AppCompatActivity() {
 
         lstMaterias.setOnItemClickListener { adapterView, view, position, l ->
 
-            Toast.makeText(this, "onclick " + adapterView.getItemAtPosition(position), Toast.LENGTH_SHORT).show()
+            val elementoSeleccionado = adapterView.getItemAtPosition(position).toString()
+
+            if(elementoSeleccionado === "Matemáticas"){
+                val actMatematicas = Intent(this, Matematicas::class.java)
+                startActivity(actMatematicas)
+            }
         }
 
 
