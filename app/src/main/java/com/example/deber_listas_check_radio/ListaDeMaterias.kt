@@ -25,14 +25,19 @@ class ListaDeMaterias : AppCompatActivity() {
             insets
         }
 
-        val username = intent.getStringExtra("user")
-        var lblUsername = findViewById<TextView>(R.id.lblUsername)
+        val username = intent.getStringExtra("username")
+        val lblUsername = findViewById<TextView>(R.id.lblUsername)
         val arrayAdapter: ArrayAdapter<*>
-        val materias = arrayOf(
-            "Matemáticas", "Inglés", "Informática", "Historia del Ecuador", "Dispositivos Móviles", "Resultados Finales"
-        )
+        val mate = intent.getStringExtra("mate")
+        val ingles = intent.getStringExtra("ingles")
+        val informatica = intent.getStringExtra("informatica")
+        val historia = intent.getStringExtra("historia")
+        val dispositivos = intent.getStringExtra("dispositivos")
+        Log.d("recibo username", username.toString())
 
         var lstMaterias = findViewById<ListView>(R.id.lstMaterias)
+
+        var materias = arrayOf(mate, ingles, informatica, historia, dispositivos).filterNotNull().toTypedArray()
 
         arrayAdapter = ArrayAdapter(this,
             android.R.layout.simple_list_item_1, materias)
@@ -45,8 +50,11 @@ class ListaDeMaterias : AppCompatActivity() {
 
             val elementoSeleccionado = adapterView.getItemAtPosition(position).toString()
 
-            if(elementoSeleccionado === "Matemáticas"){
+            Log.d("elemento seleccionado", elementoSeleccionado)
+
+            if(elementoSeleccionado == "Matemáticas"){
                 val actMatematicas = Intent(this, Matematicas::class.java)
+                actMatematicas.putExtra("username", username)
                 startActivity(actMatematicas)
             }
         }

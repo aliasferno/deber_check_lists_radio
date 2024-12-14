@@ -13,6 +13,21 @@
         android:theme="@style/Theme.Deber_Listas_Check_Radio"
         tools:targetApi="31">
         <activity
+            android:name=".Ingles3"
+            android:exported="false" />
+        <activity
+            android:name=".Ingles2"
+            android:exported="false" />
+        <activity
+            android:name=".Ingles1"
+            android:exported="false" />
+        <activity
+            android:name=".MatematicasFinal"
+            android:exported="false" />
+        <activity
+            android:name=".Matematicas5"
+            android:exported="false" />
+        <activity
             android:name=".Matematicas4"
             android:exported="false" />
         <activity

@@ -23,11 +23,12 @@ class MainActivity : AppCompatActivity() {
         val txtUsername = findViewById<EditText>(R.id.txtUsuario)
         val btnIngresar = findViewById<Button>(R.id.btnIngresar)
 
-        btnIngresar.setOnClickListener {
-            val flm = Intent(this, ListaDeMaterias::class.java)
+        var username = txtUsername.text
 
-            flm.putExtra("user", txtUsername.text.toString())
-            startActivity(flm)
+        btnIngresar.setOnClickListener {
+            val sel = Intent(this, SeleccionEvaluaciones::class.java)
+            sel.putExtra("username", username.toString())
+            startActivity(sel)
         }
     }
 }
