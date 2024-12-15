@@ -57,6 +57,11 @@ class ListaDeMaterias : AppCompatActivity() {
                 actMatematicas.putExtra("username", username)
                 startActivity(actMatematicas)
             }
+            if(elementoSeleccionado == "Inglés"){
+                val actIngles = Intent(this, Ingles1::class.java)
+                actIngles.putExtra("username", username)
+                startActivity(actIngles)
+            }
         }
 
 

@@ -60,19 +60,19 @@
             android:id="@+id/rbOp1Ingles1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="RadioButton" />
+            android:text="Año" />
 
         <RadioButton
             android:id="@+id/rbOp2Ingles1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="RadioButton" />
+            android:text="Radio" />
 
         <RadioButton
             android:id="@+id/rbOpCorrectaIngles1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="RadioButton" />
+            android:text="Lugar" />
     </RadioGroup>
 
     <Button
